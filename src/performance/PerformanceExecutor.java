@@ -15,14 +15,14 @@ public abstract class PerformanceExecutor {
 		this.max 		= max;
 	}
 	
-	public void execute() throws Exception {
+	public double execute() throws Exception {
 		Clock clock = Clock.systemDefaultZone();
 		long start = clock.millis();
 		
 		this.doWork(max);
 		
 		long end = clock.millis();
-		System.out.println("Total time: "+((end - start)/1000.0) +" s");
+		return (end - start) / 1000.0;
 	}
 	
 	public abstract void doWork(int max) throws Exception;
