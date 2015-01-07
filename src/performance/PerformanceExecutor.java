@@ -1,31 +1,13 @@
 package performance;
 
-import java.time.Clock;
 import java.util.stream.IntStream;
 
 public abstract class PerformanceExecutor {
-	protected final int nthreads, max;
+	public abstract void init(int nthreads);
 	
-	public PerformanceExecutor() {
-		this(Runtime.getRuntime().availableProcessors(), 10_000_000);
-	}
+	public abstract void execute(int max) throws Exception;
 	
-	public PerformanceExecutor(int nthreads, int max) {
-		this.nthreads 	= nthreads;
-		this.max 		= max;
-	}
-	
-	public double execute() throws Exception {
-		Clock clock = Clock.systemDefaultZone();
-		long start = clock.millis();
-		
-		this.doWork(max);
-		
-		long end = clock.millis();
-		return (end - start) / 1000.0;
-	}
-	
-	public abstract void doWork(int max) throws Exception;
+	public abstract void exit();
 	
 	public static boolean isPrime(long n) {
 		return n > 1 && rangeClosed(2, (int) Math.sqrt(n)).noneMatch(divisor -> n % divisor == 0);
