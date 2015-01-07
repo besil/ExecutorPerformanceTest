@@ -25,7 +25,7 @@ public class AkkaExecutor extends PerformanceExecutor {
 		Config config = ConfigFactory.parseMap(configuration);
 		
 		this.system = ActorSystem.create("PrimeCalculator", config);
-		int totActors = 2;
+		int totActors = nthreads;
 		
 		this.actors = new ArrayList<ActorRef>(totActors);
 		for( int n=0; n<totActors; n++ ) {
@@ -44,7 +44,6 @@ public class AkkaExecutor extends PerformanceExecutor {
 
 	@Override
 	public void exit() {
-		system.awaitTermination();
 		system.shutdown();
 	}
 }
