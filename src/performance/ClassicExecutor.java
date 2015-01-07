@@ -23,7 +23,6 @@ public class ClassicExecutor extends PerformanceExecutor {
 		for( int i=0; i<max; i++ ) {
 			executor.submit(new Worker(i));
 		}
-		
 		executor.shutdown();
 	}
 
