@@ -1,10 +1,11 @@
 package main;
 
-import performance.ClassicExecutor;
+import performance.akka.AkkaExecutor;
 
 public class ExecutorPerformanceMain {
 	public static void main(String[] args) throws Exception {
 //		new ForkJoinExecutor().execute();
-		new ClassicExecutor().execute();
+//		new ClassicExecutor().execute();
+		new AkkaExecutor().execute();
 	}
 }
