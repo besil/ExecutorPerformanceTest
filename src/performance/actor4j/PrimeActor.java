@@ -1,6 +1,6 @@
 package performance.actor4j;
 
-import actor.LocalActor;
+import actor.impl.LocalActor;
 import performance.PerformanceExecutor;
 
 public class PrimeActor extends LocalActor {
