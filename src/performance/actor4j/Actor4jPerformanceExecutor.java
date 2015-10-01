@@ -3,7 +3,8 @@ package performance.actor4j;
 import java.util.LinkedList;
 import java.util.List;
 
-import actor.Actor;
+import org.besil.actor.Actor;
+
 import performance.PerformanceExecutor;
 
 public class Actor4jPerformanceExecutor extends PerformanceExecutor {

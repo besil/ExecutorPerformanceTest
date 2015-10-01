@@ -1,6 +1,7 @@
 package performance.actor4j;
 
-import actor.impl.LocalActor;
+import org.besil.actor.impl.LocalActor;
+
 import performance.PerformanceExecutor;
 
 public class PrimeActor extends LocalActor {

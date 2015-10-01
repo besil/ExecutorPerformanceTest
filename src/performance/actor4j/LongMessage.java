@@ -1,6 +1,6 @@
 package performance.actor4j;
 
-import messages.ActorMessage;
+import org.besil.messages.ActorMessage;
 
 public class LongMessage implements ActorMessage {
 	public long n;
